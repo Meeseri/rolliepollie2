@@ -3,8 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const body = document.body;
 
   if (toggleButton) {
-    console.log("Toggle button found!");
-
     if (localStorage.getItem("darkMode") === "enabled") {
       body.classList.add("dark-mode");
     }
@@ -14,11 +12,9 @@ document.addEventListener("DOMContentLoaded", function () {
       const mode = body.classList.contains("dark-mode") ? "enabled" : "disabled";
       localStorage.setItem("darkMode", mode);
     });
-  } else {
-    console.warn("Dark mode toggle button not found.");
   }
 
-  // Reveal toggles
+  // Reveal buttons (motd, updates)
   document.querySelectorAll(".reveal-toggle").forEach(button => {
     const originalText = button.textContent;
 
@@ -36,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Duck click on portrait
+  // Portrait Quack
   const portrait = document.getElementById("portrait");
   if (portrait) {
     portrait.addEventListener("click", () => {
@@ -44,4 +40,56 @@ document.addEventListener("DOMContentLoaded", function () {
       quack.play();
     });
   }
+  
+
+    // GBA Widget Click-to-Reveal + Animate
+  const gba = document.getElementById("gbaWidget");
+  const gbaMsg = document.getElementById("gbaMessage");
+
+  if (gba && gbaMsg) {
+
+
+    
+    gba.addEventListener("click", () => {
+
+
+      const beepboop = new Audio("/assets/audio/beepboop.wav");
+      beepboop.play();
+
+      gba.classList.add("active");
+      gbaMsg.classList.toggle("hidden");
+
+      // Restart animation each click
+      setTimeout(() => {
+        gba.classList.remove("active");
+      }, 1000);
+    });
+
+    
+  }
+
+  // ✨ Fixation Click-to-Reveal
+  document.querySelectorAll(".fixation-header").forEach(header => {
+    header.addEventListener("click", () => {
+      const content = header.nextElementSibling;
+      content.classList.toggle("hidden");
+    });
+  });
+
+function attachSoundEffect(targetId, audioPath) {
+  const el = document.getElementById(targetId);
+  if (el) {
+    el.addEventListener("click", () => {
+      const sound = new Audio(audioPath);
+      sound.play();
+    });
+  }
+}
+
+attachSoundEffect("tails", "/assets/audio/sonic-tails.mp3");
+
+  // 🧠 Add anything new here next time
+
+
+  
 });
