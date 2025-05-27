@@ -33,6 +33,89 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
+
+.welcome-card {
+  background: rgba(255,255,255,0.95);
+  border: 2.5px solid #e2e8f0;
+  border-radius: 18px;
+  max-width: 540px;
+  margin: 38px auto 28px auto;
+  box-shadow: 0 8px 38px 0 rgba(140, 180, 255, 0.13);
+  padding: 24px 24px 16px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive, sans-serif;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+body.dark-mode .welcome-card {
+  background: rgba(26,28,38,0.96);
+  border: 2.5px solid #384268;
+  box-shadow: 0 8px 44px 0 rgba(80,110,180,0.17);
+}
+
+.welcome-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 16px;
+}
+
+.welcome-gif {
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  border: 2px solid #b7d6ff;
+  background: #e9f7ff;
+  box-shadow: 0 2px 14px #b7d6ff22;
+  margin-bottom: 0;
+}
+
+.welcome-card h1 {
+  color: #22253b;
+  font-size: 1.4em;
+  margin-bottom: 0;
+  text-shadow: 0 2px 10px #e8ecff44;
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive, sans-serif;
+}
+
+body.dark-mode .welcome-card h1 {
+  color: #e6e8ff;
+  text-shadow: 0 2px 8px #a4b6ff44;
+}
+
+.welcome-body p {
+  font-size: 1.08em;
+  color: #36394a;
+  margin: 14px 0 10px 0;
+  line-height: 1.5;
+}
+
+body.dark-mode .welcome-body p {
+  color: #c9cff7;
+}
+
+.welcome-invite {
+  font-size: 1.01em;
+  margin: 10px 0;
+  color: #5375a5;
+  font-family: 'Consolas', 'Fira Mono', monospace;
+  letter-spacing: 0.2px;
+}
+.welcome-invite .arrow {
+  color: #ffac33;
+  font-size: 1.2em;
+}
+
+.welcome-signoff {
+  color: #a581f7;
+  font-size: 1.03em;
+  margin-top: 12px;
+}
+
+
     
 .nav-button {
   display: flex;
@@ -225,6 +308,7 @@ body.dark-mode .icon-badge i {
   color: #333333;
   margin-top: 0;
   margin-bottom: 10px;
+  text-align: center;
   text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
 }
 
@@ -240,6 +324,7 @@ body.dark-mode .icon-badge i {
   font-size: 0.9rem;
   color: #555555;
   margin-bottom: 10px;
+  text-align: center;
   line-height: 1.5;
 }
 
@@ -264,6 +349,202 @@ body.dark-mode .icon-badge i {
   margin-top: 10px;
   border: 1px solid rgba(255, 255, 255, 0.8);
 }
+
+
+
+/* Center the whole review content */
+.interest-box.game-review {
+  background: rgba(255, 255, 255, 0.92); /* almost solid white */
+  color: #22253b;
+  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.18);
+  border: 2px solid #e2e8f0;
+  backdrop-filter: blur(8px) saturate(110%);
+  -webkit-backdrop-filter: blur(8px) saturate(110%);
+  font-size: 1.12em;
+  font-weight: 500;
+  text-shadow: 0 2px 6px rgba(90,90,150,0.08);
+}
+
+/* Center the image and make it a bit larger */
+.review-image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  
+}
+
+body.dark-mode .interest-box.game-review {
+  background: rgba(26, 28, 38, 0.94); /* rich dark blue-gray */
+  color: #e7e9f8;
+  border: 2px solid #3d425c;
+  box-shadow: 0 8px 40px 0 rgba(60,120,210,0.20);
+  text-shadow: 0 2px 10px #11182d66;
+}
+
+body.dark-mode .game-title {
+  color: #a4cdf7;
+}
+body.dark-mode .game-desc {
+  color: #c2cdf6;
+}
+body.dark-mode .game-rating, 
+body.dark-mode .rating-label {
+  color: #ffc9ee;
+  text-shadow: 0 2px 8px #c05ae355;
+}
+
+
+
+.review-img {
+  width: 210px;
+  height: 210px;
+  margin: 0 auto;
+  border-radius: 12px;
+  border: 2.5px solid #94d0ff;
+  box-shadow: 0 2px 12px rgba(80,160,255,0.12);
+  margin-bottom: 8px;
+  background: #191f33;
+  animation: popIn 0.7s cubic-bezier(.77,-0.19,.22,1.33) 1;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.8) rotate(-6deg); opacity: 0; }
+  80% { transform: scale(1.05) rotate(2deg); opacity: 1;}
+  100% { transform: scale(1) rotate(0); }
+}
+
+
+#marioSoundImg {
+  cursor: pointer;
+  transition: transform 0.18s;
+}
+#marioSoundImg:active {
+  transform: scale(1.15) rotate(3deg);
+  box-shadow: 0 0 18px #ffe066bb;
+}
+
+
+
+@media (max-width: 600px) {
+  .interest-box.game-review {
+    max-width: 98vw;
+    padding: 6vw 2vw;
+  }
+  .review-img {
+    width: 80vw;
+    height: auto;
+    max-width: 220px;
+  }
+}
+
+
+/* Title and details */
+.review-header {
+  font-size: 1.3rem;
+  color: #e0eaff;
+  margin-bottom: 10px;
+}
+
+.game-title {
+  font-size: 1.1rem;
+  margin: 10px 0 2px 0;
+  font-weight: bold;
+  color: #b6e0ff;
+}
+
+.game-year {
+  font-size: 0.95em;
+  color: #aaa;
+}
+
+.game-desc {
+  color: #bfc9df;
+  font-size: 0.98rem;
+  margin-bottom: 10px;
+}
+
+.game-thoughts {
+  text-align: left;
+  display: inline-block;
+  margin: 0 auto 10px auto;
+  color: #e0eaff;
+  font-size: 1rem;
+}
+
+.game-thoughts li {
+  margin-bottom: 5px;
+}
+
+.game-rating {
+  margin-top: 7px;
+  font-size: 1.2em;
+  color: #f7c3e5;
+}
+
+.rating-label {
+  font-size: 1em;
+  color: #ff80b2;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+
+
+/* Moodboard spruce up */
+.visual-moodboard {
+  text-align: center;
+  background: rgba(255,255,255,0.89);
+  border: 2.5px solid #e2e8f0;
+  box-shadow: 0 6px 22px 0 rgba(120,130,220,0.10);
+  margin-bottom: 32px;
+  border-radius: 18px;
+  padding: 22px 10px 20px 10px;
+  transition: box-shadow 0.3s, background 0.3s;
+}
+
+/* For dark mode */
+body.dark-mode .visual-moodboard {
+  background: rgba(26,28,38,0.92);
+  border: 2.5px solid #364060;
+  box-shadow: 0 6px 32px 0 rgba(60,100,200,0.13);
+}
+
+.visual-moodboard .gifs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 18px 0 15px 0;
+}
+
+.visual-moodboard .webgif {
+  width: 78px;
+  height: 78px;
+  border-radius: 10px;
+  border: 2px solid #e4ecff;
+  background: #f9fbff;
+  box-shadow: 0 2px 14px #a4d6ff11;
+  transition: transform 0.18s, box-shadow 0.18s;
+}
+
+.visual-moodboard .webgif:hover {
+  transform: scale(1.07) rotate(-3deg);
+  box-shadow: 0 6px 22px #9de7f844;
+  border-color: #8fdcff;
+}
+
+/* Space and center the dark mode button */
+.visual-moodboard .retro-button {
+  display: inline-block;
+  margin: 10px auto 0 auto;
+  font-size: 1.04em;
+  font-weight: 500;
+  box-shadow: 0 2px 8px #7ee6ff20;
+}
+
+
 
 
 /* Music player widget */
@@ -691,6 +972,8 @@ header:hover {
     box-sizing: border-box;
   }
 
+
+
   .music-player iframe {
     height: 300px;
   }
@@ -944,16 +1227,44 @@ body.dark-mode .nav-button i {
 
 .link-badge {
   display: inline-block;
-  background: linear-gradient(135deg, #ffc0cb, #ffbbf1);
-  color: #2a2a2a;
-   font-size: 0.75rem;
-   font-weight: bold;
-   padding: 4px 8px;
-   border-radius: 8px;
-   margin-bottom: 6px;
-   box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
-   width: fit-content;
-   text-shadow: none;
+  background: linear-gradient(100deg, #fff4e6 40%, #ffe6fa 100%);
+  color: #e973b8;
+  font-size: 0.89em;
+  font-weight: bold;
+  padding: 4px 14px;
+  border-radius: 18px;
+  box-shadow: 
+    0 0 8px #ffb8e299,   /* outer pink */
+    0 0 4px #fff4e644;    /* soft highlight */
+  border: 1.5px solid #381835;
+  letter-spacing: 0.2px;
+  text-shadow: 
+    0 2px 10px #ffd9f755,
+    0 1px 2px #fff9f7cc;
+  position: relative;
+  top: -2px;
+  margin-right: 8px;
+  transition: 
+    box-shadow 0.22s,
+    background 0.22s,
+    color 0.22s;
+  animation: badgePop 1.2s cubic-bezier(.5,1.6,.6,1.15) infinite alternate;
+}
+
+.link-badge:hover {
+  box-shadow: 
+    0 0 18px #ffb8e2cc,
+    0 0 6px #92718b;
+  color: #fff;
+  background: linear-gradient(100deg, #ffa3ef 20%, #ffe199 100%);
+  filter: brightness(1.14);
+  transform: scale(1.07) rotate(-2deg);
+  cursor: pointer;
+}
+
+@keyframes badgePop {
+  0% { filter: brightness(1.05); }
+  100% { filter: brightness(1.21) drop-shadow(0 0 6px #ffb8e2bb); }
 }
 
 .link-badge-music {
@@ -962,6 +1273,18 @@ body.dark-mode .nav-button i {
 
 .link-badge-new {
   background: linear-gradient(to right, #ffd54f, #ffe082);
+}
+
+body.dark-mode .link-badge {
+  background: linear-gradient(100deg, #29253a 40%, #4c274b 100%);
+  color: #ffd6fc;
+  border: 1.5px solid #ad81d1;
+  box-shadow: 0 0 16px #e991ff44, 0 0 4px #2b0a2f33;
+  text-shadow: 0 2px 12px #0006, 0 1px 4px #9a6eff99;
+}
+body.dark-mode .link-badge:hover {
+  background: linear-gradient(100deg, #ffbbf1 10%, #e28fff 90%);
+  color: #2b183b;
 }
 
 
@@ -1278,18 +1601,30 @@ body.dark-mode .fixation-content {
 }
 /* Already existing */
 .floating-widget {
-  position: fixed;
-  z-index: 999;
-  max-width: 120px;
-  cursor: grab;
-  transition: transform 0.3s ease;
-  user-select: none;
+  display: block;
+  margin: 0 auto;
+  max-width: 130px;
+  border-radius: 10px;
+  border: 2px solid #b7d6ff;
+  box-shadow: 0 2px 14px #a7d6ff33;
+  background: #f7f9fc;
+  cursor: pointer;
+  transition: 
+    transform 0.18s,
+    box-shadow 0.3s,
+    border-color 0.3s;
+  animation: gbaPulse 3s ease-in-out infinite;
+  /* REMOVE position: fixed and z-index! */
 }
 
 .floating-widget:hover {
-  transform: scale(1.05) rotate(-2deg);
+  box-shadow:
+    0 0 22px 5px #4ecdc4bb,
+    0 0 38px 8px #6abfff77;
+  border-color: #3ce6ff;
+  transform: scale(1.06) rotate(-2deg);
+  background: #ecfaff;
 }
-
 /* GLOW + SPIN when clicked */
 .floating-widget.active {
   animation: glowSpin 1s ease;
@@ -1302,6 +1637,11 @@ body.dark-mode .fixation-content {
   100% { transform: rotate(360deg) scale(1); }
 }
 
+@keyframes gbaPulse {
+  0%, 100% { box-shadow: 0 2px 14px #a7d6ff33; }
+  50% { box-shadow: 0 0 32px 8px #7efcff66, 0 2px 24px #4ecdc466; }
+}
+
 /* GBA position */
 #gbaWidget {
   bottom: 60px;
@@ -1310,19 +1650,27 @@ body.dark-mode .fixation-content {
 
 /* Message box */
 .gba-popup {
-  position: fixed;
-  bottom: 150px;
-  left: 60px;
-  background: rgba(255, 255, 255, 0.9);
-  border: 2px solid #ccc;
-  padding: 10px 14px;
-  border-radius: 10px;
-  box-shadow: 0 0 12px rgba(0, 240, 255, 0.4);
-  font-size: 0.95rem;
-  color: #222;
+  display: none; /* hidden by default */
+  margin: 10px auto 0 auto;
+  background: rgba(255,255,255,0.95);
+  border: 2px solid #b7d6ff;
+  padding: 12px 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px #a7f2ff11;
+  font-size: 0.98em;
+  color: #272744;
   max-width: 220px;
-  z-index: 1000;
-  backdrop-filter: blur(6px);
+  text-align: center;
+  position: static; /* or just remove the position property */
+}
+
+.gba-popup a {
+  color: #2e7acb;
+  text-decoration: underline dotted;
+}
+
+.gba-popup a:hover {
+  color: #9cc7f7;
 }
 
 /* Hide initially */
@@ -1330,11 +1678,11 @@ body.dark-mode .fixation-content {
   display: none;
 }
 
+
 body.dark-mode .gba-popup {
-  background: rgba(25, 25, 40, 0.95);
-  border: 2px solid #6abfff;
-  box-shadow: 0 0 15px rgba(120, 180, 255, 0.3);
-  color: #e6f0ff;
+  background: #24253b;
+  border-color: #364060;
+  color: #e7e9f8;
 }
 
 body.dark-mode .gba-popup a {

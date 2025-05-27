@@ -43,30 +43,18 @@ document.addEventListener("DOMContentLoaded", function () {
   
 
     // GBA Widget Click-to-Reveal + Animate
-  const gba = document.getElementById("gbaWidget");
-  const gbaMsg = document.getElementById("gbaMessage");
+const gba = document.getElementById("gbaWidget");
+const gbaMsg = document.getElementById("gbaMessage");
 
-  if (gba && gbaMsg) {
-
-
-    
-    gba.addEventListener("click", () => {
-
-
-      const beepboop = new Audio("/assets/audio/beepboop.wav");
-      beepboop.play();
-
-      gba.classList.add("active");
-      gbaMsg.classList.toggle("hidden");
-
-      // Restart animation each click
-      setTimeout(() => {
-        gba.classList.remove("active");
-      }, 1000);
-    });
-
-    
-  }
+if (gba && gbaMsg) {
+  gba.addEventListener("click", () => {
+    gbaMsg.style.display = gbaMsg.style.display === 'block' ? 'none' : 'block';
+    gba.classList.add("active");
+    setTimeout(() => {
+      gba.classList.remove("active");
+    }, 1000);
+  });
+}
 
   // ✨ Fixation Click-to-Reveal
   document.querySelectorAll(".fixation-header").forEach(header => {
@@ -87,6 +75,8 @@ function attachSoundEffect(targetId, audioPath) {
 }
 
 attachSoundEffect("tails", "/assets/audio/sonic-tails.mp3");
+attachSoundEffect("marioSoundImg", "/assets/audio/okiMario.wav");
+attachSoundEffect("gbaWidget", "/assets/audio/beepboop.wav")
 
   // 🧠 Add anything new here next time
 
